@@ -170,7 +170,7 @@ for courbe_name, courbe_data in data.items():
 
     legend_label = f"{courbe_name}: "
     for key, value in courbe_data.items():
-        if key != "data":
+        if key != "data" and key != "Ant1" and key != "Ant2":
             legend_label += f"{key}={value}, "
     legend_label = legend_label[:-2]
 
