@@ -29,6 +29,8 @@ st.title("Visualisation des données")
 
 fig, ax = plt.subplots()
 
+ax.set_title("Antennes E: Wifi vs. R: Dipole")
+
 for courbe_name, courbe_data in data.items():
     legend_label = f"{courbe_name}: "
     for key, value in courbe_data.items():
