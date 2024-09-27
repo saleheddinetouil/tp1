@@ -164,6 +164,11 @@ data = {
     }
 }
 
+st.code("""Classe : **STIC L2 C**\n
+Étudiant 1 : **Saleh Eddine Touil**
+Étudiant 2 : **Chames Eddine Turki**
+Étudiant 3 : 
+""")
 
 for courbe_name, courbe_data in data.items():
     fig, ax = plt.subplots()
