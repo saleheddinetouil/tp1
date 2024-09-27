@@ -163,8 +163,10 @@ data = {
         }
     }
 }
+
+
 for courbe_name, courbe_data in data.items():
-    fig, ax = plt.subplots()  # Créer une figure et un axe pour chaque courbe
+    fig, ax = plt.subplots()
 
     ax.set_title("Antennes E: {} vs. R: {}".format(courbe_data["Ant1"], courbe_data["Ant2"]))
 
@@ -176,11 +178,11 @@ for courbe_name, courbe_data in data.items():
 
     x_data = list(courbe_data["data"].values())[0]
     y_data = list(courbe_data["data"].values())[1]
-    ax.plot(x_data, y_data, label=legend_label)
+    ax.plot(x_data, y_data, label=legend_label, marker='o')  # Ajout du marqueur 'o'
 
     ax.set_xlabel(list(courbe_data["data"].keys())[0])
     ax.set_ylabel(list(courbe_data["data"].keys())[1])
     ax.legend()
     ax.grid(True)
 
-    st.pyplot(fig)  # Afficher chaque figure séparément
+    st.pyplot(fig)
