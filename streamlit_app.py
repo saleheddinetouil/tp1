@@ -49,10 +49,6 @@ for courbe_name, courbe_data in data.items():
             ax.text(x=0.5, y=0.5, s=f"{key}={value}")
             break
 
-    for key, value in courbe_data["data"].items():
-        ax.text(x=0.5, y=0.5, s=f"{key}={value}")
-        break
-
     break
 
 ax.set_xlabel(list(courbe_data["data"].keys())[0])
