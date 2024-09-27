@@ -163,33 +163,22 @@ data = {
         }
     }
 }
-
-# ... (Le reste du code est identique au code précédent) ...
-
-st.title("Visualisation des données")
-
-fig, ax = plt.subplots()
-
-ax.set_title("Antennes E: Wifi vs. R: Dipole")
-
 for courbe_name, courbe_data in data.items():
+    fig, ax = plt.subplots()  # Créer une figure et un axe pour chaque courbe
+
     legend_label = f"{courbe_name}: "
     for key, value in courbe_data.items():
-        if key != "data" and key != "Ant1" and key != "Ant2":
+        if key != "data":
             legend_label += f"{key}={value}, "
-    legend_label = legend_label[:-2]  # Supprimer la dernière virgule et l'espace
+    legend_label = legend_label[:-2]
 
     x_data = list(courbe_data["data"].values())[0]
     y_data = list(courbe_data["data"].values())[1]
-    # display under figure
     ax.plot(x_data, y_data, label=legend_label)
 
+    ax.set_xlabel(list(courbe_data["data"].keys())[0])
+    ax.set_ylabel(list(courbe_data["data"].keys())[1])
+    ax.legend()
+    ax.grid(True)
 
-
-
-ax.set_xlabel(list(courbe_data["data"].keys())[0])
-ax.set_ylabel(list(courbe_data["data"].keys())[1])
-ax.legend()
-ax.grid(True)
-
-st.pyplot(fig)
+    st.pyplot(fig)  # Afficher chaque figure séparément
