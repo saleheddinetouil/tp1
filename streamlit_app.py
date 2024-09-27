@@ -2,37 +2,46 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 data = {
-    "Puissance, Puissance recue": [
-        {"Puissance emise (dBm)": 0, "Puissance recue (dBm)": -50},
-        {"Puissance emise (dBm)": 10, "Puissance recue (dBm)": -40},
-        {"Puissance emise (dBm)": 20, "Puissance recue (dBm)": -30},
-    ],
-    "Frequence, Puissance recue": [
-        {"Frequence (GHz)": 2.4, "Puissance recue (dBm)": -60},
-        {"Frequence (GHz)": 2.5, "Puissance recue (dBm)": -55},
-        {"Frequence (GHz)": 2.6, "Puissance recue (dBm)": -50},
-    ],
-    "Distance, Frequence recue": [
-        {"Distance (m)": 1, "Frequence recue (GHz)": 2.45},
-        {"Distance (m)": 2, "Frequence recue (GHz)": 2.44},
-        {"Distance (m)": 3, "Frequence recue (GHz)": 2.43},
-    ],
+    "Courbe 1": {
+        "Ant1": "wifi",
+        "Ant2": "Dipole",
+        "Freq cte": "500Mhz",
+        "PuissanceEntree": "4 dBm",
+        "data": {
+            "Distance": [1, 2, 3, 4, 5],
+            "Puissance recue": [-10, -15, -20, -25, -30]
+        }
+    },
+    "Courbe 2": {
+        "Ant1": "Yagi",
+        "Ant2": "Patch",
+        "PuissanceEntree cte": "0 dBm",
+        "Distance": "1m",
+        "data": {
+            "Frequence": [400, 450, 500, 550, 600],
+            "Puissance recue": [-5, -3, -1, 1, 3]
+        }
+    },
+    # ... Ajoutez d'autres courbes ici ...
 }
+
+st.title("Visualisation des données")
 
 fig, ax = plt.subplots()
 
-for title, dataset in data.items():
-    x_values = [list(row.values())[0] for row in dataset]
-    y_values = [list(row.values())[1] for row in dataset]
-    
-    # Extraire les noms des clés pour la légende
-    x_label = list(dataset[0].keys())[0]
-    y_label = list(dataset[0].keys())[1]
+for courbe_name, courbe_data in data.items():
+    legend_label = f"{courbe_name}: "
+    for key, value in courbe_data.items():
+        if key != "data":
+            legend_label += f"{key}={value}, "
+    legend_label = legend_label[:-2]  # Supprimer la dernière virgule et l'espace
 
-    ax.plot(x_values, y_values, label=f"{title} ({x_label} vs {y_label})")
+    x_data = list(courbe_data["data"].values())[0]
+    y_data = list(courbe_data["data"].values())[1]
+    ax.plot(x_data, y_data, label=legend_label)
 
-ax.set_xlabel("X")
-ax.set_ylabel("Y")
+ax.set_xlabel(list(courbe_data["data"].keys())[0])
+ax.set_ylabel(list(courbe_data["data"].keys())[1])
 ax.legend()
 ax.grid(True)
 
