@@ -31,7 +31,7 @@ for courbe_name, courbe_data in data.items():
     x_data = list(courbe_data["data"].values())[0]
     y_data = list(courbe_data["data"].values())[1]
     # display under figure
-    ax.scatter(x_data, y_data, label=legend_label, marker="o")
+    ax.scatter(x_data, y_data, label=legend_label, marker="o", color="blue",x="Distance (cm)",y="Puissance recue (dBm)")
 
 
 
