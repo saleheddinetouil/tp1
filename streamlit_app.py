@@ -166,6 +166,8 @@ data = {
 for courbe_name, courbe_data in data.items():
     fig, ax = plt.subplots()  # Créer une figure et un axe pour chaque courbe
 
+    ax.set_title("Antennes E: {} vs. R: {}".format(courbe_data["Ant1"], courbe_data["Ant2"]))
+
     legend_label = f"{courbe_name}: "
     for key, value in courbe_data.items():
         if key != "data":
