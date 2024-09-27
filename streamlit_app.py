@@ -9,7 +9,7 @@ data = {
         "PuissanceEntree": "4 dBm",
         "data": {
             "Distance (cm)": [100, 80, 60, 40 ,20],
-            "Puissance recue (dBm)": [-59,-52, -47,-43, -39,]
+            "Puissance recue (dBm)": [-59,-52, -47,-43, -39]
         }
     },
     "Courbe 2": {
