@@ -42,6 +42,19 @@ for courbe_name, courbe_data in data.items():
     y_data = list(courbe_data["data"].values())[1]
     ax.plot(x_data, y_data, label=legend_label)
 
+# add constants to the plot to info the user
+for courbe_name, courbe_data in data.items():
+    for key, value in courbe_data.items():
+        if key != "data":
+            ax.text(x=0.5, y=0.5, s=f"{key}={value}")
+            break
+
+    for key, value in courbe_data["data"].items():
+        ax.text(x=0.5, y=0.5, s=f"{key}={value}")
+        break
+
+    break
+
 ax.set_xlabel(list(courbe_data["data"].keys())[0])
 ax.set_ylabel(list(courbe_data["data"].keys())[1])
 ax.legend()
