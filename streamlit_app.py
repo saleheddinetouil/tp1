@@ -8,8 +8,8 @@ data = {
         "Freq cte": "500 MHz",
         "PuissanceEntree": "4 dBm",
         "data": {
-            "Distance (cm)": [100, 80, 60],
-            "Puissance recue (dBm)": [-59, -47, -39]
+            "Distance (cm)": [100, 80, 60, 40 ,20],
+            "Puissance recue (dBm)": [-59,-52, -47,-43, -39,]
         }
     },
     "Courbe 2": {
