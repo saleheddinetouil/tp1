@@ -3,23 +3,13 @@ import matplotlib.pyplot as plt
 
 data = {
     "Courbe 1": {
-        "Ant1": "wifi",
+        "Ant1": "Wifi",
         "Ant2": "Dipole",
-        "Freq cte": "500Mhz",
+        "Freq cte": "500 MHz",
         "PuissanceEntree": "4 dBm",
         "data": {
-            "Distance": [1, 2, 3, 4, 5],
-            "Puissance recue": [-10, -15, -20, -25, -30]
-        }
-    },
-    "Courbe 2": {
-        "Ant1": "Yagi",
-        "Ant2": "Patch",
-        "PuissanceEntree cte": "0 dBm",
-        "Distance": "1m",
-        "data": {
-            "Frequence": [400, 450, 500, 550, 600],
-            "Puissance recue": [-5, -3, -1, 1, 3]
+            "Distance (cm)": [100, 80, 60],
+            "Puissance recue (dBm)": [-59, -47, -39]
         }
     },
     # ... Ajoutez d'autres courbes ici ...
