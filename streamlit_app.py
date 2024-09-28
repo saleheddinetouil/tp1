@@ -104,52 +104,52 @@ data = {
     },
     "Courbe 11": {
         "Ant1": "Yaggi", 
-        "Ant2": "Loop",
-        "Puissance (dBm)": "0 dBm",
-        "Frequence (MHz)" : "6 GHz",
+        "Ant2": "Dipole",
+        "Puissance (dBm)": "4 dBm",
+        "Distance (m)" : "1 m",
         "data": {
-             "Puissance (dBm)": [10,12],
-             "Puissance recue (dBm)": [-43, -37]
+             "Frequence (MHz)": [550, 650, 750, 850, 950],
+             "Puissance recue (dBm)": [-48, -43, -40, -55, -42]
         }
     },
     "Courbe 12": {
-        "Ant1": "Helical", 
-        "Ant2": "Loop",
-        "Puissance (dBm)": "6 dBm",
-        "Frequence (MHz)" : "1.6 GHz",
+        "Ant1": "Yaggi", 
+        "Ant2": "Dipole",
+        "Puissance (dBm)": "4 dBm",
+        "Frequence (GHZ)" : "1 GHZ",
         "data": {
              "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
-             "Puissance recue (dBm)": [-52, -54, -47, -29, -29]
+             "Puissance recue (dBm)": [-48, -40, -37, -35, -35]
         }
     },
     "Courbe 13": {
-        "Ant1": "Hauraya", 
-        "Ant2": "Loop",
-        "Puissance (dBm)": "0 dBm",
-        "Distance (m)" : "1m",
+        "Ant1": "LOOP Circulaire", 
+        "Ant2": "Dipole",
+        "Frequence (GHz)": "1 GHz",
+        "Distance (m)" : "1 m",
         "data": {
-             "Freq (MHz)": [550, 650, 750, 850, 950],
-             "Puissance recue (dBm)": [-60, -48, -69, -71, -43]
+             "Puissance (dBm)": [4, 6, 8, 10, 12],
+             "Puissance recue (dBm)": [-50, -48, -44, -43, -37]
         }
     },
     "Courbe 14": {
-        "Ant1": "Hauraya", 
-        "Ant2": "Loop",
+        "Ant1": "LOOP Circulaire", 
+        "Ant2": "Dipole",
         "Puissance (dBm)": "4 dBm",
-        "Distance (m)" : "1m",
+        "Frequence (GHz)": "1 GHz",
         "data": {
-             "Puissance (dBm)": [2, 4, 6, 8, 10],
-             "Puissance recue (dBm)": [-60, -47, -40, -38, -35]
+             "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
+             "Puissance recue (dBm)": [-52, -54, -57, -47, -29]
         }
     },
     "Courbe 15": {
-        "Ant1": "Hauraya", 
-        "Ant2": "Loop",
+        "Ant1": "LOOP Circulaire", 
+        "Ant2": "Dipole",
         "Puissance (dBm)": "4 dBm",
-        "Distance (m)" : "1m",
+        "Distance (m)" : "1 m",
         "data": {
-             "Freq (MHz)": [100, 200, 300, 400, 500],
-             "Puissance recue (dBm)": [-37, -36, -35, -37, -33]
+             "Freq (MHz)": [550, 650, 750, 850, 950],
+             "Puissance recue (dBm)": [-60, -45, -68, -71, -43]
         }
     },
     "Courbe 16": {
