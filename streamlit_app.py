@@ -83,7 +83,7 @@ data = {
         }
     },
     "Courbe 9": {
-        "Ant1": "Yagi", 
+        "Ant1": "Dipole", 
         "Ant2": "Dipole",
         "Puissance (dBm)": "4 dBm",
         "Frequence (MHz)" : "650 MHz",
@@ -103,7 +103,7 @@ data = {
         }
     },
     "Courbe 11": {
-        "Ant1": "Helical", 
+        "Ant1": "Yaggi", 
         "Ant2": "Loop",
         "Puissance (dBm)": "0 dBm",
         "Frequence (MHz)" : "6 GHz",
