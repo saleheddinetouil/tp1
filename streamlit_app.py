@@ -61,52 +61,52 @@ data = {
              "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
              "Puissance recue (dBm)": [-66, -50, -46, -43, -39]
         }
-    }, # TODO
+    }, 
     "Courbe 7": {
         "Ant1": "Dipole", 
         "Ant2": "Dipole",
-        "Puissance cte": "4 dBm",
-        "Freq cte" : "650 MHz",
+        "Frequence (MHz)": "550 MHz",
+        "Distance (m)" : "1 m",
         "data": {
-             "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
-             "Puissance recue (dBm)": [-43, -35, -25, -20, -18]
+             "Puissance (dBm)": [2, 4, 6, 8, 10],
+             "Puissance recue (dBm)": [-52, -42, -38, -36, -34]
         }
     },
     "Courbe 8": {
-        "Ant1": "Yagi", 
+        "Ant1": "Dipole", 
         "Ant2": "Dipole",
-        "Puissance cte": "4 dBm",
-        "Distance cte" : "1m",
+        "Puissance (dBm)": "4 dBm",
+        "Distance (m)" : "1 m",
         "data": {
-             "Freq (MHz)": [750, 850, 950],
-             "Puissance recue (dBm)": [-45, -38, -34]
+             "Freq (MHz)": [550,650,750, 850, 950],
+             "Puissance recue (dBm)": [-55, -45, -42, -39, -35]
         }
     },
     "Courbe 9": {
         "Ant1": "Yagi", 
         "Ant2": "Dipole",
-        "Puissance cte": "0 dBm",
-        "Distance cte" : "1m",
+        "Puissance (dBm)": "4 dBm",
+        "Frequence (MHz)" : "650 MHz",
         "data": {
-             "Freq (MHz)": [550, 650, 750, 850, 950],
-             "Puissance recue (dBm)": [-48, -43, -40, -42, -35]
+             "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
+             "Puissance recue (dBm)": [-43, -35, -26, -20, -14]
         }
     },
     "Courbe 10": {
-        "Ant1": "Yagi", 
+        "Ant1": "Yaggi", 
         "Ant2": "Dipole",
-        "Puissance cte": "0 dBm",
-        "Freq cte" : "550 MHz",
+        "Frequence (MHz)" : "750 MHz",
+        "Distance (m)": "1 m",
         "data": {
-             "Distance (m)": [1, 0.8, 0.6, 0.4],
-             "Puissance recue (dBm)": [-66, -50, -43, -35]
+             "Puissance (dBm)": [2, 4, 6, 8, 10],
+             "Puissance recue (dBm)": [-45, -41, -38, -36, -34]
         }
     },
     "Courbe 11": {
         "Ant1": "Helical", 
         "Ant2": "Loop",
-        "Puissance cte": "0 dBm",
-        "Freq cte" : "6 GHz",
+        "Puissance (dBm)": "0 dBm",
+        "Frequence (MHz)" : "6 GHz",
         "data": {
              "Puissance (dBm)": [10,12],
              "Puissance recue (dBm)": [-43, -37]
@@ -115,8 +115,8 @@ data = {
     "Courbe 12": {
         "Ant1": "Helical", 
         "Ant2": "Loop",
-        "Puissance cte": "6 dBm",
-        "Freq cte" : "1.6 GHz",
+        "Puissance (dBm)": "6 dBm",
+        "Frequence (MHz)" : "1.6 GHz",
         "data": {
              "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
              "Puissance recue (dBm)": [-52, -54, -47, -29, -29]
@@ -125,8 +125,8 @@ data = {
     "Courbe 13": {
         "Ant1": "Hauraya", 
         "Ant2": "Loop",
-        "Puissance cte": "0 dBm",
-        "Distance cte" : "1m",
+        "Puissance (dBm)": "0 dBm",
+        "Distance (m)" : "1m",
         "data": {
              "Freq (MHz)": [550, 650, 750, 850, 950],
              "Puissance recue (dBm)": [-60, -48, -69, -71, -43]
@@ -135,8 +135,8 @@ data = {
     "Courbe 14": {
         "Ant1": "Hauraya", 
         "Ant2": "Loop",
-        "Puissance cte": "4 dBm",
-        "Distance cte" : "1m",
+        "Puissance (dBm)": "4 dBm",
+        "Distance (m)" : "1m",
         "data": {
              "Puissance (dBm)": [2, 4, 6, 8, 10],
              "Puissance recue (dBm)": [-60, -47, -40, -38, -35]
@@ -145,8 +145,8 @@ data = {
     "Courbe 15": {
         "Ant1": "Hauraya", 
         "Ant2": "Loop",
-        "Puissance cte": "4 dBm",
-        "Distance cte" : "1m",
+        "Puissance (dBm)": "4 dBm",
+        "Distance (m)" : "1m",
         "data": {
              "Freq (MHz)": [100, 200, 300, 400, 500],
              "Puissance recue (dBm)": [-37, -36, -35, -37, -33]
@@ -155,8 +155,8 @@ data = {
     "Courbe 16": {
         "Ant1": "Hauraya", 
         "Ant2": "Loop",
-        "Puissance cte": "4 dBm",
-        "Freq cte" : "300 MHz",
+        "Puissance (dBm)": "4 dBm",
+        "Frequence (MHz)" : "300 MHz",
         "data": {
              "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
              "Puissance recue (dBm)": [-43, -35, -39, -34, -29]
