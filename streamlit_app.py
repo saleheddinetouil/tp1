@@ -28,18 +28,18 @@ data = {
         "Freq": "500 MHz",
         "Distance": "1 m",
         "data": {
-            "Puissance (dBm)": [4, 6, 8, 10],
-            "Puissance recue (dBm)": [-52, -43, -38, -31]
+            "Puissance (dBm)": [2, 4, 6, 8, 10],
+            "Puissance recue (dBm)": [-50,-45, -42, -39, -35]
         }
     },
     "Courbe 4": {
-        "Ant1": "Dipole",
+        "Ant1": "Thouraya",
         "Ant2": "Dipole",
         "Freq cte": "550 MHz",
         "Distance": "1 m",
         "data": {
-            "Puissance (dBm)": [4, 6, 8, 10],
-            "Puissance recue (dBm)": [-52, -43, -38, -31]
+            "Puissance (dBm)": [2, 4, 6, 8, 10],
+            "Puissance recue (dBm)": [-67, -55 ,-52, -49, -46]
         }
     },
     "Courbe 5": {
