@@ -23,7 +23,7 @@ data = {
         }
     },
     "Courbe 3": {
-        "Ant1": "Dipole",
+        "Ant1": "Wifi",
         "Ant2": "Dipole",
         "Freq": "500 MHz",
         "Distance": "1 m",
