@@ -154,14 +154,34 @@ data = {
     },
     "Courbe 16": {
         "Ant1": "Hauraya", 
-        "Ant2": "Loop",
+        "Ant2": "LOOP Circulaire",
+        "Distance (m)": "1 m",
+        "Frequence (MHz)" : "550 MHz",
+        "data": {
+             "Puissance (dBm)": [2, 4, 6, 8, 10],
+             "Puissance recue (dBm)": [-60, -45, -40, -38, -35]
+        }
+    },
+    "Courbe 17": {
+        "Ant1": "Hauraya", 
+        "Ant2": "LOOP Circulaire",
         "Puissance (dBm)": "4 dBm",
-        "Frequence (MHz)" : "300 MHz",
+        "Distance (m)" : "1 m",
+        "data": {
+             "Freq (MHz)": [100, 200, 300, 400, 500],
+             "Puissance recue (dBm)": [-27, -36, -35, -31, -33]
+        }
+    },
+    "Courbe 18": {
+        "Ant1": "Hauraya", 
+        "Ant2": "LOOP Circulaire",
+        "Puissance (dBm)": "4 dBm",
+        "Frequence (GHz)": "1 GHz",
         "data": {
              "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
-             "Puissance recue (dBm)": [-43, -35, -39, -34, -29]
+             "Puissance recue (dBm)": [-43, -39, -35, -34, -29]
         }
-    }
+    },
 }
 
 st.title("TP1 - 27/09/2024")
