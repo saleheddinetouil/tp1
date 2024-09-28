@@ -5,8 +5,8 @@ data = {
     "Courbe 1": {
         "Ant1": "Wifi",
         "Ant2": "Dipole",
-        "Freq cte": "500 MHz",
-        "PuissanceEntree": "4 dBm",
+        "Fe": "500 MHz",
+        "Pe": "4 dBm",
         "data": {
             "Distance (cm)": [100, 80, 60, 40 ,20],
             "Puissance recue (dBm)": [-59,-52, -47,-43, -39]
@@ -15,11 +15,11 @@ data = {
     "Courbe 2": {
         "Ant1": "Thoraya",
         "Ant2": "Dipole",
-        "Freq cte": "500 MHz",
+        "Pe": "4 dBm",
         "Distance": "1 m",
         "data": {
-            "Puissance (dBm)": [2, 4, 6, 8, 10],
-            "Puissance recue (dBm)": [-67, -58, -52, -46, -35]
+            "Freq (MHz)": [500,400,300,200,100],
+            "Puissance recue (dBm)": [-38, -42, -43, -47, -54]
         }
     },
     "Courbe 3": {
