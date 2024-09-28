@@ -8,7 +8,7 @@ data = {
         "Frequence": "500 MHz",
         "Puissance": "4 dBm",
         "data": {
-            "Distance (cm)": [100, 80, 60, 40 ,20],
+            "Distance (m)": [1, 0.80, 0.60, 0.40 ,0.20],
             "Puissance recue (dBm)": [-59,-52, -47,-43, -39]
         }
     },
@@ -35,7 +35,7 @@ data = {
     "Courbe 4": {
         "Ant1": "Thouraya",
         "Ant2": "Dipole",
-        "Freq cte": "550 MHz",
+        "Frequence": "550 MHz",
         "Distance": "1 m",
         "data": {
             "Puissance (dBm)": [2, 4, 6, 8, 10],
@@ -43,25 +43,25 @@ data = {
         }
     },
     "Courbe 5": {
-        "Ant1": "Dipole", 
+        "Ant1": "Thouraya", 
         "Ant2": "Dipole",
-        "Freq cte" : "550 MHz",
-        "Distance cte": "1m",
+        "Puissance (dBm)" : "4 dBm",
+        "Distance (m)": "1 m",
         "data": {
-             "PuissanceEntree (dBm)": [4,6,8,10],
-             "Puissance recue (dBm)": [-52, -43, -38, -31]
+             "Frequence (MHz)": [550,650,750,850,950],
+             "Puissance recue (dBm)": [-55, -42, -41, -39,-32]
         }
     },
     "Courbe 6": {
-        "Ant1": "Dipole", 
+        "Ant1": "Thouraya", 
         "Ant2": "Dipole",
-        "Puissance cte": "4 dBm",
-        "Distance cte": "1m",
+        "Puissance (dBm)": "4 dBm",
+        "Frequence (MHz)": "550 MHz",
         "data": {
-             "Freq (MHz)": [550, 650, 750, 850],
-             "Puissance recue (dBm)": [-33, -38, -39, -35]
+             "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
+             "Puissance recue (dBm)": [-66, -50, -46, -43, -39]
         }
-    },
+    }, # TODO
     "Courbe 7": {
         "Ant1": "Dipole", 
         "Ant2": "Dipole",
