@@ -1,85 +1,215 @@
 import streamlit as st
-import numpy as np
 import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="Abaque de Smith Interactif", page_icon=":satellite:", layout="wide")
-st.title("Abaque de Smith Interactif pour l'Analyse RF")
-st.markdown("**Un outil puissant pour visualiser et analyser les circuits RF**")
+data = {
+    "Courbe 1": {
+        "Ant1": "Wifi",
+        "Ant2": "Dipole",
+        "Frequence": "500 MHz",
+        "Puissance": "4 dBm",
+        "data": {
+            "Distance (m)": [1, 0.80, 0.60, 0.40 ,0.20],
+            "Puissance recue (dBm)": [-59,-52, -47,-43, -39]
+        }
+    },
+    "Courbe 2": {
+        "Ant1": "Wifi",
+        "Ant2": "Dipole",
+        "Puissance": "4 dBm",
+        "Distance": "1 m",
+        "data": {
+            "Frequence (MHz)": [500,400,300,200,100],
+            "Puissance recue (dBm)": [-38, -42, -43, -47, -54]
+        }
+    },
+    "Courbe 3": {
+        "Ant1": "Wifi",
+        "Ant2": "Dipole",
+        "Freq": "500 MHz",
+        "Distance": "1 m",
+        "data": {
+            "Puissance (dBm)": [2, 4, 6, 8, 10],
+            "Puissance recue (dBm)": [-50,-45, -42, -39, -35]
+        }
+    },
+    "Courbe 4": {
+        "Ant1": "Thouraya",
+        "Ant2": "Dipole",
+        "Frequence": "550 MHz",
+        "Distance": "1 m",
+        "data": {
+            "Puissance (dBm)": [2, 4, 6, 8, 10],
+            "Puissance recue (dBm)": [-67, -55 ,-52, -49, -46]
+        }
+    },
+    "Courbe 5": {
+        "Ant1": "Thouraya", 
+        "Ant2": "Dipole",
+        "Puissance (dBm)" : "4 dBm",
+        "Distance (m)": "1 m",
+        "data": {
+             "Frequence (MHz)": [550,650,750,850,950],
+             "Puissance recue (dBm)": [-55, -42, -41, -39,-32]
+        }
+    },
+    "Courbe 6": {
+        "Ant1": "Thouraya", 
+        "Ant2": "Dipole",
+        "Puissance (dBm)": "4 dBm",
+        "Frequence (MHz)": "550 MHz",
+        "data": {
+             "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
+             "Puissance recue (dBm)": [-66, -50, -46, -43, -39]
+        }
+    }, 
+    "Courbe 7": {
+        "Ant1": "Dipole", 
+        "Ant2": "Dipole",
+        "Frequence (MHz)": "550 MHz",
+        "Distance (m)" : "1 m",
+        "data": {
+             "Puissance (dBm)": [2, 4, 6, 8, 10],
+             "Puissance recue (dBm)": [-52, -42, -38, -36, -34]
+        }
+    },
+    "Courbe 8": {
+        "Ant1": "Dipole", 
+        "Ant2": "Dipole",
+        "Puissance (dBm)": "4 dBm",
+        "Distance (m)" : "1 m",
+        "data": {
+             "Freq (MHz)": [550,650,750, 850, 950],
+             "Puissance recue (dBm)": [-55, -45, -42, -39, -35]
+        }
+    },
+    "Courbe 9": {
+        "Ant1": "Dipole", 
+        "Ant2": "Dipole",
+        "Puissance (dBm)": "4 dBm",
+        "Frequence (MHz)" : "650 MHz",
+        "data": {
+             "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
+             "Puissance recue (dBm)": [-43, -35, -26, -20, -14]
+        }
+    },
+    "Courbe 10": {
+        "Ant1": "Yaggi", 
+        "Ant2": "Dipole",
+        "Frequence (MHz)" : "750 MHz",
+        "Distance (m)": "1 m",
+        "data": {
+             "Puissance (dBm)": [2, 4, 6, 8, 10],
+             "Puissance recue (dBm)": [-45, -41, -38, -36, -34]
+        }
+    },
+    "Courbe 11": {
+        "Ant1": "Yaggi", 
+        "Ant2": "Dipole",
+        "Puissance (dBm)": "4 dBm",
+        "Distance (m)" : "1 m",
+        "data": {
+             "Frequence (MHz)": [550, 650, 750, 850, 950],
+             "Puissance recue (dBm)": [-48, -43, -40, -55, -42]
+        }
+    },
+    "Courbe 12": {
+        "Ant1": "Yaggi", 
+        "Ant2": "Dipole",
+        "Puissance (dBm)": "4 dBm",
+        "Frequence (GHZ)" : "1 GHZ",
+        "data": {
+             "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
+             "Puissance recue (dBm)": [-48, -40, -37, -35, -35]
+        }
+    },
+    "Courbe 13": {
+        "Ant1": "LOOP Circulaire", 
+        "Ant2": "Dipole",
+        "Frequence (GHz)": "1 GHz",
+        "Distance (m)" : "1 m",
+        "data": {
+             "Puissance (dBm)": [4, 6, 8, 10, 12],
+             "Puissance recue (dBm)": [-50, -48, -44, -43, -37]
+        }
+    },
+    "Courbe 14": {
+        "Ant1": "LOOP Circulaire", 
+        "Ant2": "Dipole",
+        "Puissance (dBm)": "4 dBm",
+        "Frequence (GHz)": "1 GHz",
+        "data": {
+             "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
+             "Puissance recue (dBm)": [-52, -54, -57, -47, -29]
+        }
+    },
+    "Courbe 15": {
+        "Ant1": "LOOP Circulaire", 
+        "Ant2": "Dipole",
+        "Puissance (dBm)": "4 dBm",
+        "Distance (m)" : "1 m",
+        "data": {
+             "Freq (MHz)": [550, 650, 750, 850, 950],
+             "Puissance recue (dBm)": [-60, -45, -68, -71, -43]
+        }
+    },
+    "Courbe 16": {
+        "Ant1": "Hauraya", 
+        "Ant2": "LOOP Circulaire",
+        "Distance (m)": "1 m",
+        "Frequence (MHz)" : "550 MHz",
+        "data": {
+             "Puissance (dBm)": [2, 4, 6, 8, 10],
+             "Puissance recue (dBm)": [-60, -45, -40, -38, -35]
+        }
+    },
+    "Courbe 17": {
+        "Ant1": "Hauraya", 
+        "Ant2": "LOOP Circulaire",
+        "Puissance (dBm)": "4 dBm",
+        "Distance (m)" : "1 m",
+        "data": {
+             "Freq (MHz)": [100, 200, 300, 400, 500],
+             "Puissance recue (dBm)": [-27, -36, -35, -31, -33]
+        }
+    },
+    "Courbe 18": {
+        "Ant1": "Hauraya", 
+        "Ant2": "LOOP Circulaire",
+        "Puissance (dBm)": "4 dBm",
+        "Frequence (GHz)": "1 GHz",
+        "data": {
+             "Distance (m)": [1, 0.8, 0.6, 0.4, 0.2],
+             "Puissance recue (dBm)": [-43, -39, -35, -34, -29]
+        }
+    },
+}
 
-def calculer_gamma(Z, Z0):
-    return (Z - Z0) / (Z + Z0)
+st.title("TP1 - 27/09/2024")
 
-def calculer_impedance(Gamma, Z0):
-    return Z0 * (1 + Gamma) / (1 - Gamma)
+st.code("""Classe : STIC L2 C\n
+Étudiant 1 : Saleh Eddine Touil
+Étudiant 2 : Chames Eddine Turki
+Étudiant 3 : ?
+""")
 
-def calculer_delta_k(S11, S12, S21, S22):
-    Delta = (1 - S11 * S22 + S12 * S21) * (1 - S11 * S22 + S12 * S21) - (S11 * S21 * S12 * S22)
-    K = (1 - abs(S11)**2 - abs(S22)**2 + abs(S11 * S22 - S12 * S21)**2) / (2 * abs(S21 * S12))
-    return Delta, K
+for courbe_name, courbe_data in data.items():
+    fig, ax = plt.subplots()
 
-st.sidebar.header("Paramètres d'entrée")
-Z0 = st.sidebar.number_input("Impédance caractéristique (Z0)", value=50.0)
-choix_mode = st.sidebar.radio("Mode de saisie:", ("Impédance (Z)", "Coefficient de réflexion (Γ)"))
+    ax.set_title("Antennes E: {} vs. R: {}".format(courbe_data["Ant1"], courbe_data["Ant2"]))
 
-st.subheader("Résultats")
-if choix_mode == "Impédance (Z)":
-    Z_real = st.sidebar.number_input("Partie réelle de Z", value=100.0)
-    Z_imag = st.sidebar.number_input("Partie imaginaire de Z", value=50.0)
-    Z = complex(Z_real, Z_imag)
-    Gamma = calculer_gamma(Z, Z0)
-    st.write(f"**Coefficient de réflexion (Γ):** {Gamma:.2f}")
-else:
-    Gamma_mag = st.sidebar.number_input("Magnitude de Γ", value=0.5, min_value=0.0, max_value=1.0)
-    Gamma_phase = st.sidebar.number_input("Phase de Γ (degrés)", value=45.0)
-    Gamma = Gamma_mag * np.exp(1j * np.deg2rad(Gamma_phase))
-    Z = calculer_impedance(Gamma, Z0)
-    st.write(f"**Impédance (Z):** {Z:.2f} Ω")
+    legend_label = f"{courbe_name}: "
+    for key, value in courbe_data.items():
+        if key != "data" and key != "Ant1" and key != "Ant2":
+            legend_label += f"{key}={value}, "
+    legend_label = legend_label[:-2]
 
-fig, ax = plt.subplots(figsize=(8, 8), subplot_kw={'projection': 'polar'})
+    x_data = list(courbe_data["data"].values())[0]
+    y_data = list(courbe_data["data"].values())[1]
+    ax.plot(x_data, y_data, label=legend_label, marker='o')  # Ajout du marqueur 'o'
 
-# Cercles de résistance constante
-for R in np.arange(0.1, 2.1, 0.1):
-    theta = np.linspace(0, 2 * np.pi, 200)
-    radius = (1 - R) / (1 + R)
-    ax.plot(theta, radius * np.ones_like(theta), 'k-', linewidth=0.5)  
-    ax.text(np.pi / 2, radius, f'R={R:.1f}', ha='center', va='center', fontsize=8)
+    ax.set_xlabel(list(courbe_data["data"].keys())[0])
+    ax.set_ylabel(list(courbe_data["data"].keys())[1])
+    ax.legend()
+    ax.grid(True)
 
-# Cercles de réactance constante
-for X in np.arange(-2, 2.1, 0.2):
-    theta = np.linspace(0, 2 * np.pi, 200)
-    radius = 1/(1 + X**2)**0.5
-    ax.plot(theta, radius * np.ones_like(theta), 'k-', linewidth=0.5)
-    ax.text(np.pi, radius, f'X={X:.1f}', ha='center', va='center', fontsize=8)
-
-# Point d'impédance (Z) ou coefficient de réflexion (Gamma)
-r = abs(Gamma)
-theta = np.angle(Gamma)
-ax.plot(theta, r, 'ro', markersize=8, label=f'{"Point Z" if choix_mode=="Impédance (Z)" else "Point Γ"}')
-
-# Configuration de l'abaque
-ax.set_theta_zero_location("N")  
-ax.set_theta_direction(-1)  
-ax.set_rlim(0, 1)  
-ax.set_title("Abaque de Smith", fontsize=14)
-ax.grid(True)
-ax.legend()
-st.pyplot(fig)
-
-
-if st.sidebar.checkbox("Afficher l'analyse de stabilité"):
-    st.subheader("Analyse de la stabilité")
-    S11 = complex(st.sidebar.text_input("Entrez S11 (ex: 0.5+0.3j): ", "0.5+0.3j"))
-    S12 = complex(st.sidebar.text_input("Entrez S12 (ex: 0.2+0.1j): ", "0.2+0.1j"))
-    S21 = complex(st.sidebar.text_input("Entrez S21 (ex: 0.8+0.4j): ", "0.8+0.4j"))
-    S22 = complex(st.sidebar.text_input("Entrez S22 (ex: 0.3+0.2j): ", "0.3+0.2j"))
-
-    Delta, K = calculer_delta_k(S11, S12, S21, S22)
-    st.write(f"**Delta:** {Delta:.2f}")
-    st.write(f"**K:** {K:.2f}")
-
-    if abs(Delta) > 1 and K > 1:
-        st.write("**Le circuit est stable inconditionnellement.**")
-    elif abs(Delta) > 1:
-        st.write("**Le circuit est stable conditionnellement.**")
-    else:
-        st.write("**Le circuit est instable.**")
+    st.pyplot(fig)
